@@ -1,0 +1,10 @@
+@use "../abstracts/variables";
+
+.booking {
+  max-width: variables.$grid-width;
+  margin: 0 auto;
+
+  &__bg-img {
+    width: 50%;
+  }
+}

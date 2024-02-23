@@ -1,0 +1,40 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: variables.$font-size;
+
+  //  media queries order - max-width high screen size to low size &  min-width low to high.
+
+  @include mixins.respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include mixins.respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include mixins.respond(phone) {
+    font-size: 43.75%;
+  }
+
+  @include mixins.respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+body {
+  font-family: variables.$font-family;
+  font-weight: 400;
+  line-height: 1.7;
+  color: variables.$color-grey-dark;
+  box-sizing: border-box;
+}
